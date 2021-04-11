@@ -39,6 +39,7 @@ jobs:
     - run: npx cypress run
     
     # gerar o relatorio em html
+    - run: npm run report:merge
     - run: npm run report:mocha
     
     # publicar relatorio em html
@@ -47,4 +48,4 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: cypress/reports  
+        FOLDER: mochawesome-report
