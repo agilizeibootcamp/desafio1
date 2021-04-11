@@ -1,1 +1,7 @@
-{}
+{
+    "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
+    "baseUrl": "http://automationpractice.com",
+    "experimentalSourceRewriting": true,
+    "watchForFileChanges": true,
+    "experimentalStudio": true
+}
