@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-11T19:17:49.030Z",
+    "end": "2021-04-11T19:18:10.170Z",
+    "duration": 21140,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e73f9b48-0351-42e2-be0d-4b3be6fd05b4",
+      "title": "",
+      "fullFile": "cypress/integration/register.spec.js",
+      "file": "cypress/integration/register.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a035b036-72be-44df-afe6-4d3da6ae6d6c",
+          "title": "Register a new user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should register new user succesfully",
+              "fullTitle": "Register a new user Should register new user succesfully",
+              "timedOut": null,
+              "duration": 21109,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Arrange\ncy.visit('/');\ncy.intercept('POST', '**/index.php?controller=authentication').as('postRegister'); //Act\ncy.get('.login').click();\ncy.get('#email_create').clear();\ncy.get('#email_create').type(chance.email());\ncy.get('#SubmitCreate > span').click();\ncy.get('#id_gender1').check();\ncy.get('#customer_firstname').clear().type(chance.first());\ncy.get('#customer_lastname').clear().type(chance.last());\ncy.get('#passwd').clear().type('agilizei');\ncy.get('#days').select(chance.natural({\n  min: 1,\n  max: 28\n}).toString());\ncy.get('#months').select(chance.month());\ncy.get('#years').select(chance.year({\n  min: 1900,\n  max: 2021\n}).toString());\ncy.get('#newsletter').check();\ncy.get('#optin').check();\ncy.get('#company').clear().type(chance.company());\ncy.get('#address1').clear().type(chance.address());\ncy.get('#address2').clear().type(chance.address());\ncy.get('#city').clear().type(chance.city());\ncy.get('#id_state').select(chance.natural({\n  min: 1,\n  max: 50\n}).toString());\ncy.get('#postcode').clear().type('00000');\ncy.get('#phone').clear().type('6123232322');\ncy.get('#phone_mobile').clear();\ncy.get('#phone_mobile').type('6191918080');\ncy.get('#alias').click().type('My home address');\ncy.get('#passwd').clear().type('agilizei');\ncy.get('#submitAccount > span').click(); //Assert\ncy.url().should('be.equal', `${Cypress.config(\"baseUrl\")}/index.php?controller=my-account`);\ncy.get('.info-account').should('contain', 'Welcome to your account');\ncy.wait('@postRegister').its('response.statusCode').should('eq', 302);",
+              "err": {},
+              "uuid": "9487d097-1dd1-4be3-823e-9b3bed436581",
+              "parentUUID": "a035b036-72be-44df-afe6-4d3da6ae6d6c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9487d097-1dd1-4be3-823e-9b3bed436581"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21109,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
