@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2021-04-11T22:29:26.935Z",
-    "end": "2021-04-11T22:29:58.443Z",
-    "duration": 31508,
+    "start": "2021-04-11T22:42:22.000Z",
+    "end": "2021-04-11T22:42:49.672Z",
+    "duration": 27672,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "46b23622-1042-48ff-9d80-5c585a71038c",
+      "uuid": "7d5c3fe1-565f-4173-81f6-8b3cc739fb96",
       "title": "",
       "fullFile": "cypress/integration/register.spec.js",
       "file": "cypress/integration/register.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1dee6963-6d02-40dd-8966-ff7c602589e2",
+          "uuid": "a18ad952-9695-45fd-b4ed-e3a386ef8450",
           "title": "Register a new user",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should register new user succesfully",
               "fullTitle": "Register a new user Should register new user succesfully",
               "timedOut": null,
-              "duration": 31293,
+              "duration": 27550,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "//Arrange\ncy.visit('/');\ncy.intercept('POST', '**/index.php?controller=authentication').as('postRegister'); //Act\ncy.get('.login').click();\ncy.get('#email_create').clear();\ncy.get('#email_create').type(chance.email());\ncy.get('#SubmitCreate > span').click();\ncy.get('#id_gender1').check();\ncy.get('#customer_firstname').clear().type(chance.first());\ncy.get('#customer_lastname').clear().type(chance.last());\ncy.get('#passwd').clear().type('agilizei');\ncy.get('#days').select(chance.natural({\n  min: 1,\n  max: 28\n}).toString());\ncy.get('#months').select(chance.month());\ncy.get('#years').select(chance.year({\n  min: 1900,\n  max: 2021\n}).toString());\ncy.get('#newsletter').check();\ncy.get('#optin').check();\ncy.get('#company').clear().type(chance.company());\ncy.get('#address1').clear().type(chance.address());\ncy.get('#address2').clear().type(chance.address());\ncy.get('#city').clear().type(chance.city());\ncy.get('#id_state').select(chance.natural({\n  min: 1,\n  max: 50\n}).toString());\ncy.get('#postcode').clear().type('00000');\ncy.get('#phone').clear().type('6123232322');\ncy.get('#phone_mobile').clear();\ncy.get('#phone_mobile').type('6191918080');\ncy.get('#alias').click().type('My home address');\ncy.get('#passwd').clear().type('agilizei');\ncy.get('#submitAccount > span').click(); //Assert\ncy.url().should('be.equal', `${Cypress.config(\"baseUrl\")}/index.php?controller=my-account`);\ncy.get('.info-account').should('contain', 'Welcome to your account');\ncy.wait('@postRegister').its('response.statusCode').should('eq', 302);",
               "err": {},
-              "uuid": "8c1ce942-fde8-4719-9ab8-3560052f8e73",
-              "parentUUID": "1dee6963-6d02-40dd-8966-ff7c602589e2",
+              "uuid": "db0b08c8-79b9-4c25-9d37-4b79e3996416",
+              "parentUUID": "a18ad952-9695-45fd-b4ed-e3a386ef8450",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "8c1ce942-fde8-4719-9ab8-3560052f8e73"
+            "db0b08c8-79b9-4c25-9d37-4b79e3996416"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 31293,
+          "duration": 27550,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
